@@ -3,3 +3,5 @@ jdk:
    - oraclejdk8
 script:
   - ./gradlew test
+notifications:
+  slack: nkgrnkgr:mckQUFLJQ5eJZFp9qU1sKFYC
