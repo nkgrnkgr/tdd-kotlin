@@ -1,5 +1,6 @@
 package chapter01
 
+import chapter01.money.Doliar
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
@@ -7,6 +8,10 @@ import org.junit.jupiter.api.Assertions.*
 internal class MoneyTest {
 
     @Test
-    fun calc() {
+    fun testMuliplication() {
+        var five = Doliar(5)
+        five.times(2)
+        assertEquals(10, five.amount)
     }
 }
+
