@@ -3,7 +3,7 @@ package chapter01
 import chapter01.money.Dollar
 import org.junit.jupiter.api.Test
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 
 internal class MoneyTest {
 
@@ -14,4 +14,3 @@ internal class MoneyTest {
         assertEquals(10, five.amount)
     }
 }
-

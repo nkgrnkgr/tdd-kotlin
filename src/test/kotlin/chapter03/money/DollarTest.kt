@@ -1,11 +1,9 @@
-package chapter02
+package chapter03.money
 
-import chapter02.money.Dollar
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
-import org.junit.jupiter.api.Assertions.assertEquals
-
-internal class MoneyTest {
+internal class DollarTest {
 
     @Test
     fun testMuliplication() {
