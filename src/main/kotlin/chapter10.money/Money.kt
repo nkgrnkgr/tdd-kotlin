@@ -1,8 +1,14 @@
 package chapter10.money
 
-abstract class Money(protected var amount: Int, protected var currency: String) {
+open class Money(protected var amount: Int, protected var currency: String) {
 
-    abstract fun times(multiplier: Int): Money
+    fun times(multiplier: Int): Money {
+        return Money(amount * multiplier, currency)
+    }
+
+    fun currency(): String {
+        return currency
+    }
 
     override fun equals(other: Any?): Boolean {
         other as Money
@@ -16,14 +22,12 @@ abstract class Money(protected var amount: Int, protected var currency: String) 
     override fun hashCode(): Int {
         return amount
     }
-
-    abstract fun currency(): String
 }
 
 fun dollar(amont: Int): Dollar {
-    return Dollar(amont)
+    return Dollar(amont, "USD")
 }
 
 fun franc(amont: Int): Franc {
-    return Franc(amont)
+    return Franc(amont, "CHF")
 }
