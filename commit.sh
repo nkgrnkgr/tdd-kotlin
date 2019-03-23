@@ -17,6 +17,5 @@ else
   git reset --hard HEAD^
 if
 
-
-
 git st
+
