@@ -24,10 +24,10 @@ open class Money(protected var amount: Int, protected var currency: String) {
     }
 }
 
-fun dollar(amont: Int): Dollar {
-    return Dollar(amont, "USD")
+fun dollar(amont: Int): Money {
+    return Money(amont, "USD")
 }
 
-fun franc(amont: Int): Franc {
-    return Franc(amont, "CHF")
+fun franc(amont: Int): Money {
+    return Money(amont, "CHF")
 }
