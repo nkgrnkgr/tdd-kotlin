@@ -1,6 +1,6 @@
 package chapter09.money
 
-abstract class Money(protected var amount: Int) {
+abstract class Money(protected var amount: Int, protected  var currency: String) {
 
     abstract fun times(multiplier: Int): Money
 
@@ -18,6 +18,8 @@ abstract class Money(protected var amount: Int) {
     override fun hashCode(): Int {
         return amount
     }
+
+    abstract fun currency(): String
 }
 
 fun dollar(amont: Int): Dollar {

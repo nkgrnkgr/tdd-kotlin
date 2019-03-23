@@ -1,7 +1,11 @@
 package chapter09.money
 
-class Franc(amount: Int) : Money(amount) {
+class Franc(amount: Int) : Money(amount, currency = "CHF") {
+    override fun currency(): String {
+        return currency;
+    }
+
     override fun times(multiplier: Int): Money {
-        return Franc(amount * multiplier)
+        return franc(amount * multiplier)
     }
 }
