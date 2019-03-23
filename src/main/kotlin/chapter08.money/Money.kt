@@ -1,6 +1,8 @@
 package chapter08.money
 
-open class Money(protected var amount: Int) {
+abstract class Money(protected var amount: Int) {
+
+    abstract fun times(multiplier: Int): Money
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -16,4 +18,12 @@ open class Money(protected var amount: Int) {
     override fun hashCode(): Int {
         return amount
     }
+}
+
+fun dollar(amont: Int): Dollar {
+    return Dollar(amont)
+}
+
+fun franc(amont: Int): Franc {
+    return Franc(amont)
 }

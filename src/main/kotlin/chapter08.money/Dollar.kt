@@ -1,7 +1,7 @@
 package chapter08.money
 
 class Dollar(amount: Int) : Money(amount) {
-    fun times(multiplier: Int): Money {
+    override fun times(multiplier: Int): Money {
         return Dollar(amount * multiplier)
     }
 }

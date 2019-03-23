@@ -9,25 +9,25 @@ class MoneyTest {
 
     @Test
     fun testMuliplication() {
-        val five = Dollar(5)
-        assertEquals(Dollar(10), five.times(2))
-        assertEquals(Dollar(15), five.times(3))
+        val five = dollar(5)
+        assertEquals(dollar(10), five.times(2))
+        assertEquals(dollar(15), five.times(3))
     }
 
     @Test
     internal fun testEquality() {
         // Kotlin は data Class にすると equals と hasCode を自動で生成してくれるのでここではdataクラスではないものとする
-        assertTrue(Dollar(5).equals(Dollar(5)))
-        assertFalse(Dollar(5).equals(Dollar(6)))
-        assertTrue(Franc(5).equals(Franc(5)))
-        assertFalse(Franc(5).equals(Franc(6)))
-        assertFalse(Dollar(5).equals(Franc(5)))
+        assertTrue(dollar(5).equals(dollar(5)))
+        assertFalse(dollar(5).equals(dollar(6)))
+        assertTrue(franc(5).equals(franc(5)))
+        assertFalse(franc(5).equals(franc(6)))
+        assertFalse(dollar(5).equals(franc(5)))
     }
 
     @Test
     fun testFrancMuliplication() {
-        val five = Franc(5)
-        assertEquals(Franc(10), five.times(2))
-        assertEquals(Franc(15), five.times(3))
+        val five = franc(5)
+        assertEquals(franc(10), five.times(2))
+        assertEquals(franc(15), five.times(3))
     }
 }
