@@ -34,10 +34,6 @@ class MoneyTest {
         var sum = five.plus(five)
         var reduced = Bank().reduce(sum, "USD")
         assertEquals(dollar(10), reduced)
-        if (sum is Sum) {
-            assertEquals(five, sum.augend)
-            assertEquals(five, sum.addend)
-        }
     }
 
     @Test
@@ -51,7 +47,7 @@ class MoneyTest {
     }
 
     @Test
-    internal fun testReduceSu() {
+    internal fun testReduceSum() {
         var sum = Sum(dollar(3), dollar(4))
         var result = Bank().reduce(sum, "USD")
         assertEquals(dollar(7), result)
