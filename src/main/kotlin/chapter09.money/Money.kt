@@ -1,6 +1,6 @@
 package chapter09.money
 
-abstract class Money(protected var amount: Int, protected  var currency: String) {
+abstract class Money(protected var amount: Int, protected var currency: String) {
 
     abstract fun times(multiplier: Int): Money
 
