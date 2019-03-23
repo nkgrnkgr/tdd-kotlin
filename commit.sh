@@ -9,7 +9,7 @@ git commit -m "finished chapter$NUMBER"
 echo "Can I push to origin/master (y/n)"
 read C
 
-if $C ="y" -o $C ="Y"; then
+if [ $C = "y" ]; then
   git ch master
   git merge hotfix_$NUMBER
   git push origin master
