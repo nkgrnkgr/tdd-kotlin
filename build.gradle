@@ -25,6 +25,10 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
 
+test {
+    useJUnitPlatform()
+}
+
 task ktlint(type: JavaExec, group: "verification") {
     description = "Check Kotlin code style."
     main = "com.github.shyiko.ktlint.Main"
