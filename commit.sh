@@ -14,7 +14,7 @@ if $C -eq "y" -o $C -eq "Y"; then
   git merge hotfix_$NUMBER
   git push origin master
 else
-  git reset --hard HEAD^
+  git reset --soft HEAD^
 fi
 
 git st
