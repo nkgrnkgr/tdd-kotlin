@@ -16,7 +16,6 @@ class MoneyTest {
 
     @Test
     internal fun testEquality() {
-        // Kotlin は data Class にすると equals と hasCode を自動で生成してくれるのでここではdataクラスではないものとする
         assertTrue(dollar(5).equals(dollar(5)))
         assertFalse(dollar(5).equals(dollar(6)))
         assertFalse(franc(5).equals(dollar(5)))
@@ -55,7 +54,7 @@ class MoneyTest {
 
     @Test
     internal fun testReduceMoney() {
-        var result = dollar(1).reduce("USD")
+        var result = Bank().reduce(dollar(1), "USD")
         assertEquals(dollar(1), result)
     }
 }

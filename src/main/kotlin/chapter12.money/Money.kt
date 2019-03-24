@@ -1,6 +1,6 @@
 package chapter12.money
 
-open class Money(var amount: Int, protected var currency: String) {
+class Money(var amount: Int, protected var currency: String) : Expression {
 
     fun times(multiplier: Int): Money {
         return Money(amount * multiplier, currency)
@@ -14,7 +14,7 @@ open class Money(var amount: Int, protected var currency: String) {
         return Sum(this, addend)
     }
 
-    fun reduce(to: String): Money {
+    override fun reduce(to: String): Money {
         return this
     }
 
