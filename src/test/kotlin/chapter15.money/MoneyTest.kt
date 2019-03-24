@@ -70,4 +70,38 @@ class MoneyTest {
         var result = bank.reduce(franc(2), "USD")
         assertEquals(dollar(1), result)
     }
+
+    @Test
+    internal fun testMixedAddition() {
+        var fiveBucks = dollar(5)
+        var tenFranc = franc(10)
+
+        var bank = Bank()
+        bank.addRate("CHF", "USD", 2)
+        var result = bank.reduce(tenFranc.plus(fiveBucks), "USD")
+
+        assertEquals(dollar(10), result)
+    }
+
+    @Test
+    internal fun testSumPlusMoney() {
+        var fiveBucks = dollar(5)
+        var tenFranc = franc(10)
+        var bank = Bank()
+        bank.addRate("CHF", "USD", 2)
+        var sum = Sum(fiveBucks, tenFranc).plus(fiveBucks)
+        var result = bank.reduce(sum, "USD")
+        assertEquals(dollar(15), result)
+    }
+
+    @Test
+    internal fun testSumTImes() {
+        var fiveBucks = dollar(5)
+        var tenFranc = franc(10)
+        var bank = Bank()
+        bank.addRate("CHF", "USD", 2)
+        var times = Sum(fiveBucks, tenFranc).times(2)
+        var result = bank.reduce(times, "USD")
+        assertEquals(dollar(20), result)
+    }
 }

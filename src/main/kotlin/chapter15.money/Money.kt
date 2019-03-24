@@ -1,7 +1,7 @@
 package chapter15.money
 
 class Money(var amount: Int, protected var currency: String) : Expression {
-    fun times(multiplier: Int): Money {
+    override fun times(multiplier: Int): Expression {
         return Money(amount * multiplier, currency)
     }
 
@@ -9,7 +9,7 @@ class Money(var amount: Int, protected var currency: String) : Expression {
         return currency
     }
 
-    fun plus(addend: Money): Expression {
+    override fun plus(addend: Expression): Expression {
         return Sum(this, addend)
     }
 
