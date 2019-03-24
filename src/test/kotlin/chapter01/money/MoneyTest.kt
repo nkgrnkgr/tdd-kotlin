@@ -1,6 +1,5 @@
-package chapter01
+package chapter01.money
 
-import chapter01.money.Dollar
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.assertEquals
